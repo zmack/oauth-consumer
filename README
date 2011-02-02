@@ -1,0 +1,11 @@
+- bundle install
+
+- fill in constants in the Token model
+
+- rackup
+
+- mozy on over to localhost:9292
+
+- after you're done with the oauth process, it should land you back in a blank page
+
+- irb -r"./token" => Token.first.request.get('wherever').body return what you need
