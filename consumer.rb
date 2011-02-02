@@ -37,7 +37,7 @@ class Consumer < Sinatra::Base
     oauth_token = params[:oauth_token]
     oauth_verifier = params[:oauth_verifier]
 
-    consumer = OAuth::Consumer.new(site_token, site_secret, :site => "http://localhost:3001")
+    consumer = OAuth::Consumer.new(site_token, site_secret, :site => Token::SITE)
 
     req_token  = OAuth::RequestToken.new(consumer, oauth_token, session[:secret])
     access_token = req_token.get_access_token(:oauth_verifier => oauth_verifier)
