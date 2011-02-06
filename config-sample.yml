@@ -1,0 +1,10 @@
+oauth2:
+  client_id: urcodes
+  secret: aremine
+  access_token_url: http://localhost:3001/oauth/token
+  site: http://localhost:3001
+
+oauth:
+  token: urcodes
+  secret: aremine
+  site: http://localhost:3001
