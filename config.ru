@@ -12,3 +12,11 @@ end
 map "/oauth2" do
   run Consumer2
 end
+
+map "/" do
+  run(Object.new.tap do |o|
+    o.singleton_class.send(:define_method, :call) do |env|
+      [ 200, { 'Content-Type' => 'text/html' }, File.open('index.html') ]
+    end
+  end)
+end
